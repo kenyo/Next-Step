@@ -2,13 +2,14 @@
   "name": "next-step",
   "version": "0.0.1",
   "description": "containing npm for build/deploy scripts",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
+  "main": "backend/app.js",
+  "engines": {
+    "node": "11.6.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm i --prefix frontend; npm i --prefix backend/; npm run build --prefix frontend/"
+    "build": "npm i --prefix frontend; npm i --prefix backend/; npm run build --prefix frontend/",
+    "heroku-postbuild": "npm install --prefix backend && cd frontend && npm install && npm run build"
   },
   "repository": {
     "type": "git",
